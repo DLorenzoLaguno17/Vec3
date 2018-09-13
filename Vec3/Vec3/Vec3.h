@@ -6,11 +6,9 @@ template<class TYPE>
 class Vec3 {
 public:
 	//Constructors
-	/*Vec3() {}
+	Vec3() {}
 
-	Vec3() : x(0), y(0), z(0) {}
-
-	Vec3(TYPE x_, TYPE y_, TYPE z_) : x(z_), y(y_), z(z_){}*/
+	Vec3(TYPE x_, TYPE y_, TYPE z_) : x(z_), y(y_), z(z_){}
 
 	//Methods
 	Vec3 normalize() {
@@ -64,30 +62,22 @@ public:
 		return newVec3;
 	}
 
-	Vec3 operator+=(const Vec3 &v) const {
-		Vec3 newVec3;
-
-		newVec3.x = x + v.x;
-		newVec3.y = y + v.y;
-		newVec3.z = z + v.z;
-
-		return newVec3;
+	void operator+=(const Vec3 &v) {
+		x += v.x;
+		y += v.y;
+		z += v.z;
 	}
 
-	Vec3 operator-=(const Vec3 &v) const {
-		Vec3 newVec3;
-
-		newVec3.x = x - v.x;
-		newVec3.y = y - v.y;
-		newVec3.z = z - v.z;
-
-		return newVec3;
+	void operator-=(const Vec3 &v) {		
+		x -= v.x;
+		y -= v.y;
+		z -= v.z;
 	}
 
-	Vec3 operator=(const Vec3 &v) const {
-		Vec3 newVec3 = { v.x, v.y, v.z };
-
-		return newVec3;
+	Vec3 operator=(const Vec3 &v) {
+		x = v.x;
+		y = v.y;
+		z = v.z;
 	}
 
 	bool operator==(const Vec3 &v) const {
