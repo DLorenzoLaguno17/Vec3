@@ -14,9 +14,9 @@ public:
 	Vec3 normalize() {
 		Vec3 newVec3;
 		
-		newVec3.x = x / sqrt(pow(dx, 2) + pow(dy, 2) + pow(dy, 2));
-		newVec3.y = y / sqrt(pow(dx, 2) + pow(dy, 2) + pow(dy, 2));
-		newVec3.z = z / sqrt(pow(dx, 2) + pow(dy, 2) + pow(dy, 2));
+		newVec3.x = x / sqrt(pow(x, 2) + pow(y, 2) + pow(y, 2));
+		newVec3.y = y / sqrt(pow(x, 2) + pow(y, 2) + pow(y, 2));
+		newVec3.z = z / sqrt(pow(x, 2) + pow(y, 2) + pow(y, 2));
 
 		return newVec3;
 	}
@@ -86,8 +86,10 @@ public:
 		return (x == v.x && y == v.y && z == v.z);
 	}
 	
-private:
+public:
 	TYPE x, y, z;
+
+private:
 };
 
 #endif // _VEC3_H_

@@ -7,7 +7,7 @@ int main() {
 	Vec3<float> floatVector2 = { 7.5f, -3.23f, 0.96f };
 
 	//Methods testing
-	intVector.zero();
+	//intVector.zero();
 
 	std::cout << "-------------------- METHODS TESTING -----------------" << std::endl;
 	if(intVector.is_zero())
@@ -15,8 +15,13 @@ int main() {
 	else
 		std::cout << "False" << std::endl;
 
-	std::cout << "------------------------------------------------------" << std::endl;
 	std::cout << "The distance between floatVector1 and floatVector2 is " << floatVector1.distance_to(&floatVector2) << std::endl;
+	
+	intVector.normalize();
+	std::cout << "The intVector normalized is " << intVector.x << " " << intVector.y << " " << intVector.z << std::endl;
+
+	floatVector2.normalize();
+	std::cout << "The floatVector2 normalized is " << floatVector2.x << " " << floatVector2.y << " " << floatVector2.z << std::endl;
 
 	//Operators testing
 	std::cout << "\n" << std::endl;
