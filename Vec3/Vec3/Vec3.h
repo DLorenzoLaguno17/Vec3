@@ -14,9 +14,9 @@ public:
 	Vec3 normalize() {
 		Vec3 newVec3;
 		
-		newVec3.x = x / (sqrt((x) ^ 2 + (y) ^ 2 + (z) ^ 2));
-		newVec3.y = y / (sqrt((x) ^ 2 + (y) ^ 2 + (z) ^ 2));
-		newVec3.y = z / (sqrt((x) ^ 2 + (y) ^ 2 + (z) ^ 2));
+		newVec3.x = x / sqrt(pow(dx, 2) + pow(dy, 2) + pow(dy, 2));
+		newVec3.y = y / sqrt(pow(dx, 2) + pow(dy, 2) + pow(dy, 2));
+		newVec3.z = z / sqrt(pow(dx, 2) + pow(dy, 2) + pow(dy, 2));
 
 		return newVec3;
 	}
@@ -32,11 +32,13 @@ public:
 	}
 
 	float distance_to(Vec3* v) const {		
+		float dist;
+		
 		float dx = v->x - x;
 		float dy = v->y - y;
 		float dz = v->z - z;
 
-		dist = sqrt((dx) ^ 2 + (dy) ^ 2 + (dz) ^ 2);
+		dist = sqrt(pow(dx,2) + pow(dy,2) + pow(dy,2));
 
 		return abs(dist);
 	}
@@ -84,7 +86,6 @@ public:
 		return (x == v.x && y == v.y && z == v.z);
 	}
 	
-
 private:
 	TYPE x, y, z;
 };
