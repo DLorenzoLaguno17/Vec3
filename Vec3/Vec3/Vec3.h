@@ -6,16 +6,16 @@ template<class TYPE>
 class Vec3 {
 public:
 	//Constructors
-	Vec3() {}
+	Vec3() : x(0), y(0), z(0) {}
 	Vec3(TYPE x_, TYPE y_, TYPE z_) : x(x_), y(y_), z(z_){}
 
 	//Methods
 	Vec3 normalize() {
 		Vec3 newVec3;
 		
-		newVec3.x = x / sqrt(pow(x, 2) + pow(y, 2) + pow(y, 2));
-		newVec3.y = y / sqrt(pow(x, 2) + pow(y, 2) + pow(y, 2));
-		newVec3.z = z / sqrt(pow(x, 2) + pow(y, 2) + pow(y, 2));
+		newVec3.x = x / (sqrt(pow(x, 2) + pow(y, 2) + pow(y, 2)));
+		newVec3.y = y / (sqrt(pow(x, 2) + pow(y, 2) + pow(y, 2)));
+		newVec3.z = z / (sqrt(pow(x, 2) + pow(y, 2) + pow(y, 2)));
 
 		return newVec3;
 	}
