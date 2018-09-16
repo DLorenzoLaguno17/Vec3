@@ -7,7 +7,7 @@ class Vec3 {
 public:
 	//Constructors
 	Vec3() {}
-	Vec3(TYPE x_, TYPE y_, TYPE z_) : x(z_), y(y_), z(z_){}
+	Vec3(TYPE x_, TYPE y_, TYPE z_) : x(x_), y(y_), z(z_){}
 
 	//Methods
 	Vec3 normalize() {
@@ -75,7 +75,7 @@ public:
 		z -= v.z;
 	}
 
-	Vec3 operator=(const Vec3 &v) {
+	void operator=(const Vec3 &v) {
 		x = v.x;
 		y = v.y;
 		z = v.z;
