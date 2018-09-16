@@ -6,6 +6,7 @@ template<class TYPE>
 class Vec3 {
 public:
 	//Constructors
+	//Vec3() {}
 	Vec3() : x(0), y(0), z(0) {}
 	Vec3(TYPE x_, TYPE y_, TYPE z_) : x(x_), y(y_), z(z_){}
 
