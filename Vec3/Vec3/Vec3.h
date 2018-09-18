@@ -6,9 +6,11 @@ template<class TYPE>
 class Vec3 {
 public:
 	//Constructors
-	//Vec3() {}
-	Vec3() : x(0), y(0), z(0) {}
-	Vec3(TYPE x_, TYPE y_, TYPE z_) : x(x_), y(y_), z(z_){}
+	Vec3() {}
+
+	Vec3(TYPE x, TYPE y, TYPE z) : x(x), y(y), z(z){}
+
+	Vec3(const Vec3& vector) : x(vector.x), y(vector.y), z(vector.z) {}
 
 	//Methods
 	Vec3 normalize() {
@@ -31,65 +33,64 @@ public:
 		return (x == 0 && y == 0 && z == 0);
 	}
 
-	float distance_to(Vec3* v) const {		
-		float dist;
+	float distance_to(Vec3* vector) const {		
+		float distance;
 		
-		float dx = v->x - x;
-		float dy = v->y - y;
-		float dz = v->z - z;
+		float dx = vector->x - x;
+		float dy = vector->y - y;
+		float dz = vector->z - z;
 
-		dist = sqrt(pow(dx,2) + pow(dy,2) + pow(dy,2));
+		distance = sqrt(pow(dx,2) + pow(dy,2) + pow(dy,2));
 
-		return abs(dist);
+		return abs(distance);
 	}
 
 	//Operators
-	Vec3 operator+(const Vec3 &v) const {
+	Vec3 operator+(const Vec3 &vector) const {
 		Vec3 newVec3;
 
-		newVec3.x = x + v.x;
-		newVec3.y = y + v.y;
-		newVec3.z = z + v.z;
+		newVec3.x = x + vector.x;
+		newVec3.y = y + vector.y;
+		newVec3.z = z + vector.z;
 
 		return newVec3;
 	}
 
-	Vec3 operator-(const Vec3 &v) const {
+	Vec3 operator-(const Vec3 &vector) const {
 		Vec3 newVec3;
 
-		newVec3.x = x - v.x;
-		newVec3.y = y - v.y;
-		newVec3.z = z - v.z;
+		newVec3.x = x - vector.x;
+		newVec3.y = y - vector.y;
+		newVec3.z = z - vector.z;
 
 		return newVec3;
 	}
 
-	void operator+=(const Vec3 &v) {
-		x += v.x;
-		y += v.y;
-		z += v.z;
+	void operator+=(const Vec3 &vector) {
+		x += vector.x;
+		y += vector.y;
+		z += vector.z;
 	}
 
-	void operator-=(const Vec3 &v) {		
-		x -= v.x;
-		y -= v.y;
-		z -= v.z;
+	void operator-=(const Vec3 &vector) {		
+		x -= vector.x;
+		y -= vector.y;
+		z -= vector.z;
 	}
 
-	void operator=(const Vec3 &v) {
-		x = v.x;
-		y = v.y;
-		z = v.z;
+	void operator=(const Vec3 &vector) {
+		x = vector.x;
+		y = vector.y;
+		z = vector.z;
 	}
 
-	bool operator==(const Vec3 &v) const {
-		return (x == v.x && y == v.y && z == v.z);
+	bool operator==(const Vec3 &vector) const {
+		return (x == vector.x && y == vector.y && z == vector.z);
 	}
 	
 public:
 	TYPE x, y, z;
 
-private:
 };
 
 #endif // _VEC3_H_

@@ -11,7 +11,7 @@ int main() {
 	Vec3<float> floatVector3 = { 2.21f, 6.62f, -4.03f };
 
 	//Methods testing
-	//intVector.zero();
+	//intVector1.zero();
 
 	std::cout << "-------------------- METHODS TESTING -----------------" << std::endl;
 	if (intVector1.is_zero())
